@@ -13,7 +13,7 @@ public class TestCommunicateWithServiceController {
     final String URL_TODO = "http://localhost:8090/todos/get_todo?id=";
 
     @GetMapping("/get_todo")
-    public ResponseEntity getTodo(@RequestParam  Long id){
+    public ResponseEntity getTodo(@RequestParam Long id){
         RestTemplate restTemplate = new RestTemplate();
         try {
             return ResponseEntity.ok(restTemplate.getForObject(URL_TODO + id, String.class));
